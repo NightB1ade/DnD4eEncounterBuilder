@@ -1,0 +1,163 @@
+{
+	"levelXp": [{
+			"level": 1
+			, "xpStandard": 100
+		}
+		, {
+			"level": 2
+			, "xpStandard": 125
+		}
+		, {
+			"level": 3
+			, "xpStandard": 150
+		}
+		, {
+			"level": 4
+			, "xpStandard": 175
+		}
+		, {
+			"level": 5
+			, "xpStandard": 200
+		}
+		, {
+			"level": 6
+			, "xpStandard": 250
+		}
+		, {
+			"level": 7
+			, "xpStandard": 300
+		}
+		, {
+			"level": 8
+			, "xpStandard": 350
+		}
+		, {
+			"level": 9
+			, "xpStandard": 400
+		}
+		, {
+			"level": 10
+			, "xpStandard": 500
+		}
+		, {
+			"level": 11
+			, "xpStandard": 600
+		}
+		, {
+			"level": 12
+			, "xpStandard": 700
+		}
+		, {
+			"level": 13
+			, "xpStandard": 800
+		}
+		, {
+			"level": 14
+			, "xpStandard": 1000
+		}
+		, {
+			"level": 15
+			, "xpStandard": 1200
+		}
+		, {
+			"level": 16
+			, "xpStandard": 1400
+		}
+		, {
+			"level": 17
+			, "xpStandard": 1600
+		}
+		, {
+			"level": 18
+			, "xpStandard": 2000
+		}
+		, {
+			"level": 19
+			, "xpStandard": 2400
+		}
+		, {
+			"level": 20
+			, "xpStandard": 2800
+		}
+		, {
+			"level": 21
+			, "xpStandard": 3200
+		}
+		, {
+			"level": 22
+			, "xpStandard": 4150
+		}
+		, {
+			"level": 23
+			, "xpStandard": 5100
+		}
+		, {
+			"level": 24
+			, "xpStandard": 6050
+		}
+		, {
+			"level": 25
+			, "xpStandard": 7000
+		}
+		, {
+			"level": 26
+			, "xpStandard": 9000
+		}
+		, {
+			"level": 27
+			, "xpStandard": 11000
+		}
+		, {
+			"level": 28
+			, "xpStandard": 13000
+		}
+		, {
+			"level": 29
+			, "xpStandard": 15000
+		}
+		, {
+			"level": 30
+			, "xpStandard": 19000
+		}
+		, {
+			"level": 31
+			, "xpStandard": 23000
+		}
+		, {
+			"level": 32
+			, "xpStandard": 27000
+		}
+		, {
+			"level": 33
+			, "xpStandard": 31000
+		}
+		, {
+			"level": 34
+			, "xpStandard": 39000
+		}
+		, {
+			"level": 35
+			, "xpStandard": 47000
+		}
+		, {
+			"level": 36
+			, "xpStandard": 55000
+		}
+		, {
+			"level": 37
+			, "xpStandard": 63000
+		}
+		, {
+			"level": 38
+			, "xpStandard": 79000
+		}
+		, {
+			"level": 39
+			, "xpStandard": 95000
+		}
+		, {
+			"level": 40
+			, "xpStandard": 111000
+		}
+	]
+}
