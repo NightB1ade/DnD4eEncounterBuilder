@@ -1,0 +1,137 @@
+{
+	"title": "Monster"
+	, "type": "object"
+	, "required": [
+		"group"
+		, "name"
+		, "level"
+		, "groupRole"
+		, "role"
+		, "isLeader"
+		, "size"
+		, "origin"
+		, "type"
+		, "keywords"
+	]
+	, "properties": {
+		"group": {
+			"type": "string"
+			, "title": "Group"
+			, "minLength": 4
+		}
+		, "name": {
+			"type": "string"
+			, "title": "Name"
+			, "minLength": 4
+		}
+		, "fullName": {
+			"type": "string"
+			, "title": "Full Name"
+			, "template": "{{group}} {{name}}"
+			, "watch": {
+				"group": "group"
+				, "name": "name"
+			}
+		}
+		, "level": {
+			"type": "integer"
+			, "title": "Level"
+			, "minimum": 1
+			, "maximum": 36
+		}
+		, "groupRole": {
+			"type": "string"
+			, "title": "Group Role"
+			, "enum": [
+				"elite"
+				, "minion"
+				, "solo"
+				, "standard"
+			]
+			, "default": "standard"
+		}
+		, "role": {
+			"type": "string"
+			, "title": "Role"
+			, "enum": [
+				"artillery"
+				, "brute"
+				, "controller"
+				, "minion"
+				, "soldier"
+			]
+			, "default": "soldier"
+		}
+		, "isLeader": {
+			"type": "boolean"
+			, "title": "Is Leader?"
+			, "default": false
+		}
+		, "levelRole": {
+			"type": "string"
+			, "title": "Level, Group Role, Role, Leader"
+			, "template": "level {{level}} {{groupRole}} {{role}} {{isLeader}}"
+			, "watch": {
+				"level": "level"
+				, "groupRole": "groupRole"
+				, "role": "role"
+				, "isLeader": "isLeader"
+			}
+		}
+		, "size": {
+			"type": "string"
+			, "title": "Size"
+			, "enum": [
+				"tiny"
+				, "small"
+				, "medium"
+				, "large"
+				, "gargantuan"
+			]
+			, "default": "medium"
+		}
+		, "origin": {
+			"type": "string"
+			, "title": "Origin"
+			, "enum": [
+				"aberrant"
+				, "immortal"
+				, "natural"
+			]
+			, "default": "natural"
+		}
+		, "type": {
+			"type": "string"
+			, "title": "Type"
+			, "enum": [
+				"beast"
+				, "humanoid"
+				, "magical beast"
+			]
+			, "default": "beast"
+		}
+		, "sizeOriginType": {
+			"type": "string"
+			, "title": "Size, Origin, Type"
+			, "template": "{{size}} {{origin}} {{type}}"
+			, "watch": {
+				"size": "size"
+				, "origin": "origin"
+				, "type": "type"
+			}
+		}
+		, "keywords": {
+			"type": "array"
+			, "format": "table"
+			, "title": "Keywords"
+			, "uniqueItems": true
+			, "items": {
+				"type": "string"
+				, "title": "Keyword"
+				, "enum": [
+					"aquatic"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,308 @@
+{
+	"title": "Monster"
+	, "required": [
+		"name"
+		, "category"
+		, "level"
+		, "role"
+		, "size"
+		, "origin"
+		, "type"
+		, "experience"
+		, "initiative"
+		, "perception"
+		, "hitPoints"
+		, "armourClass"
+		, "defenceFortitude"
+		, "defenceReflex"
+		, "defenceWill"
+		, "speeds"
+	]
+	, "properties": {
+		"name": {
+			"type": "string"
+			, "title": "Name"
+			, "minLength": 4
+		}
+		, "category": {
+			"type": "string"
+			, "title": "Category"
+			, "minLength": 4
+		}
+		, "level": {
+			"type": "integer"
+			, "title": "Level"
+			, "minimum": 1
+			, "maximum": 30
+		}
+		, "isElite": {
+			"type": "boolean"
+			, "title": "Is Elite?"
+			, "default": false
+		}
+		, "role": {
+			"type": "string"
+			, "title": "Role"
+			, "enum": [
+				"artillery"
+				, "brute"
+				, "controller"
+				, "minion"
+				, "soldier"
+			]
+			, "default": "soldier"
+		}
+		, "isLeader": {
+			"type": "boolean"
+			, "title": "Is Leader?"
+			, "default": false
+		}
+		, "levelRole": {
+			"type": "string"
+			, "template": "level {{level}} {{isElite}} {{role}} {{isLeader}}"
+			, "watch": {
+				"level": "level"
+				, "isElite": "isElite"
+				, "role": "role"
+				, "isLeader": "isLeader"
+			}
+		}
+		, "size": {
+			"type": "string"
+			, "title": "Size"
+			, "enum": [
+				"tiny"
+				, "small"
+				, "medium"
+				, "large"
+				, "gargantuan"
+			]
+			, "default": "medium"
+		}
+		, "origin": {
+			"type": "string"
+			, "title": "Origin"
+			, "enum": [
+				"aberrant"
+				, "immortal"
+				, "natural"
+			]
+			, "default": "natural"
+		}
+		, "type": {
+			"type": "string"
+			, "title": "Type"
+			, "enum": [
+				"beast"
+				, "humanoid"
+				, "magical beast"
+			]
+			, "default": "beast"
+		}
+		, "sizeOriginType": {
+			"type": "string"
+			, "template": "{{size}} {{origin}} {{type}}"
+			, "watch": {
+				"size": "size"
+				, "origin": "origin"
+				, "type": "type"
+			}
+		}
+		, "keywords": {
+			"type": "array"
+			, "format": "table"
+			, "title": "Keywords"
+			, "uniqueItems": true
+			, "items": {
+				"type": "string"
+				, "title": "Keyword"
+				, "enum": [
+					"aquatic"
+				]
+			}
+		}
+		, "experience": {
+			"type": "integer"
+			, "title": "Experience"
+			, "maximum": 4000
+		}
+		, "initiative": {
+			"type": "integer"
+			, "title": "Initiative"
+			, "minimum": 10
+			, "maximum": 12
+		}
+		, "perception": {
+			"type": "integer"
+			, "title": "Perception"
+			, "minimum": 8
+			, "maximum": 16
+		}
+		, "senses": {
+			"type": "array"
+			, "format": "table"
+			, "title": "Senses"
+			, "uniqueItems": true
+			, "items": {
+				"type": "string"
+				, "title": "Sense"
+				, "enum": [
+					"darkvision"
+					, "low-light"
+				]
+			}
+		}
+		, "perceptionSenses": {
+			"type": "string"
+			, "template": "perception {{perception}}; {{senses}}"
+			, "watch": {
+				"perception": "perception"
+				, "senses": "senses"
+			}
+		}
+		, "auras": {
+			"type": "array"
+			, "format": "table"
+			, "title": "Auras"
+			, "uniqueItems": true
+			, "items": {
+				"type": "object"
+				, "title": "Aura"
+				, "required": [
+					"name"
+					, "size"
+					, "description"
+				]
+				, "properties": {
+					"name": {
+						"type": "string"
+						, "title": "Name"
+						, "minLength": 4
+					}
+					, "size": {
+						"type": "integer"
+						, "title": "Size"
+						, "minimum": 1
+						, "maximum": 5
+					}
+					, "description": {
+						"type": "string"
+						, "title": "Description"
+						, "minLength": 4
+					}
+				}
+			}
+		}
+		, "hitPoints": {
+			"type": "integer"
+			, "title": "Hit Points"
+			, "minimum": 1
+			, "maximum": 348
+		}
+		, "armourClass": {
+			"type": "integer"
+			, "title": "Armour Class"
+			, "minimum": 29
+			, "maximum": 35
+		}
+		, "defenceFortitude": {
+			"type": "integer"
+			, "title": "Fortitude"
+			, "minimum": 27
+			, "maximum": 33
+		}
+		, "defenceReflex": {
+			"type": "integer"
+			, "title": "Reflex"
+			, "minimum": 23
+			, "maximum": 31
+		}
+		, "defenceWill": {
+			"type": "integer"
+			, "title": "Will"
+			, "minimum": 21
+			, "maximum": 33
+		}
+		, "damageModifiers": {
+			"type": "array"
+			, "format": "table"
+			, "title": "Damage Modifiers"
+			, "uniqueItems": true
+			, "items": {
+				"type": "object"
+				, "title": "Damage Modifier"
+				, "required": [
+					"modifier"
+					, "damageType"
+				]
+				, "properties": {
+					"modifier": {
+						"type": "string"
+						, "title": "Modifier"
+						, "enum": [
+							"immune"
+							, "resist"
+							, "vulnerable"
+						]
+					}
+					, "amount": {
+						"type": "integer"
+						, "title": "Amount"
+						, "minimum": 0
+						, "maximum": 10
+					}
+					, "damageType": {
+						"type": "string"
+						, "title": "Damage Type"
+						, "enum": [
+							"cold"
+							, "fire"
+						]
+					}
+				}
+			}
+		}
+		, "savingThrows": {
+			"type": "integer"
+			, "title": "Saving Throws"
+			, "minimum": 2
+			, "maximum": 2
+		}
+		, "speeds": {
+			"type": "array"
+			, "format": "table"
+			, "title": "Speeds"
+			, "uniqueItems": true
+			, "items": {
+				"type": "object"
+				, "title": "Speed"
+				, "required": [
+					"method"
+					, "distance"
+				]
+				, "properties": {
+					"method": {
+						"type": "string"
+						, "title": "Method"
+						, "enum": [
+							"standard"
+							, "swim"
+						]
+					}
+					, "distance": {
+						"type": "integer"
+						, "title": "Distance"
+						, "minimum": 5
+						, "maximum": 10
+					}
+				}
+			}
+		}
+		, "actionPoints": {
+			"type": "integer"
+			, "title": "Action Points"
+			, "minimum": 0
+			, "maximum": 0
+		}
+	}
+}
